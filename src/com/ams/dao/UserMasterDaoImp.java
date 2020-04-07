@@ -14,6 +14,21 @@ public class UserMasterDaoImp implements UserMasterDao {
 		UserMaster u = users.get(userId);
 		return u;
 	}
+	public String verifyDao(String username, String password){
+		boolean flag=false;
+		String result=null;
+		mockData();
+		for(UserMaster um : users.values()){
+			if(um.getUsername().equalsIgnoreCase(username) && um.getPassword().equalsIgnoreCase(password)){
+				result= um.getUserType();
+				flag=true;
+			}
+		}
+		if (flag==true)
+			return result;
+		else
+			return null;
+		}
 	@Override
 	public boolean createUserMaster(UserMaster u) {
 		UserMaster result=users.putIfAbsent(u.getUserId(), u);
@@ -39,7 +54,7 @@ public class UserMasterDaoImp implements UserMasterDao {
 		return false;
 	}
 	public void mockData() {
-		this.createUserMaster(new UserMaster("123456","admin","987456","Manager"));
+		this.createUserMaster(new UserMaster("123456","admin","987456","admin"));
 		this.createUserMaster(new UserMaster("423456","Samiran","902860@ab","Admin"));
 		this.createUserMaster(new UserMaster("523456","Amarsinh","456879@wr","Manager"));
 		this.createUserMaster(new UserMaster("923456","Shailesh","Sa12563@hg","Admin"));
