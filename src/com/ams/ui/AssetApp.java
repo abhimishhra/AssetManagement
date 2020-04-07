@@ -75,11 +75,11 @@ public class AssetApp {
 				int choice = sc.nextInt();
 				switch(choice){
 					case 1: System.out.println("Enter Employee Id");
-					String empId = sc.nextLine();
+					String empId = sc.next();
 					System.out.println("Enter Manager Id");
-					String managerId = sc.nextLine();
+					String managerId = sc.next();
 					System.out.println("Enter Asset Name");
-					String assetName = sc.next();
+					String assetName = sc.nextLine();
 					AssetForm form = new AssetForm(empId, managerId, assetName);
 					String requestid = user.raiseRequest(form);
 					System.out.println("Asset Request Id: "+requestid);
