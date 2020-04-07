@@ -37,7 +37,7 @@ public class AssetApp {
 					case 1: System.out.println("Enter Asset number");
 					String assetNumber = sc.nextLine();
 					System.out.println("Enter Asset Name");
-					String assetName = sc.next();
+					String assetName = sc.nextLine();
 					System.out.println("Enter Asset Description");
 					String assetDes = sc.next();
 					System.out.println("Enter Asset Quantity");
